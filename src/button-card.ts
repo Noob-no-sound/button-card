@@ -1119,6 +1119,9 @@ class ButtonCard extends LitElement {
       switch (ev.detail.action) {
         case 'tap':
           this._handleTap();
+          this._config!.lock.enabled = true;
+          this.delay(3000);
+          this._config!.lock.enabled = false;
           break;
         case 'hold':
           this._handleHold();
